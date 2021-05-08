@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class SortingManager {
 
 	public static void main(String[] args) {
-		
+
 		// Classes for save data and use sort methods and supporting methods
 		// example: printing array elements
 		Sorter sorterBubble = new BubbleSort();
