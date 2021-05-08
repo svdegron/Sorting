@@ -6,10 +6,8 @@ public class SortingManager {
 
 	public static void main(String[] args) {
 
-		System.out.println("Hello World!");
-
 		// for save data and use sort methods and supporting methods (for example: printing array elements)
-		BubbleSort sorter = new BubbleSort();
+		Sorter sorter = new BubbleSort();
 		
 		int[] unsortedForBegin = { 5, -3, 2, 6, 9, -8, 4, 1, -9, 8, 3, 7 }; // { 4, 3, 2, 1 }; //
 		// this is for beauty, may be easiest for read / understand
@@ -36,7 +34,7 @@ public class SortingManager {
 		System.out.println("Sorted array from begin:");
 		System.out.println(sorter.PrintArray(sortedForBegin));
 		
-		sortedForEnd = sorter.AscendingFromEnd(unsortedForEnd);
+		sortedForEnd = ((BubbleSort)sorter).AscendingFromEnd(unsortedForEnd);
 		
 		// I need see result
 		System.out.println("Sorted array from end:");
@@ -50,7 +48,7 @@ public class SortingManager {
 		// sortedForBegin = new int[sortedForBegin.length];			// (1)
 		sortedForBegin = sorter.CleanArray(sortedForBegin.length);	// (2)
 		
-		sortedForBegin = sorter.DescendingFromBegin(unsortedForBegin);
+		sortedForBegin = ((BubbleSort)sorter).DescendingFromBegin(unsortedForBegin);
 		
 		System.out.println("Array is sorted from begin by descending:");
 		System.out.println(sorter.PrintArray(sortedForBegin));	
