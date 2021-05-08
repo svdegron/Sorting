@@ -24,13 +24,14 @@ public class CocktailSortTest {
 
 	}
 
-	/*
-	 * @Test public void CheckSortFromEnd() {
-	 * 
-	 * int[] unsorted = { 8, 7, 6, 5 }; int[] sorted = { 5, 6, 7, 8 };
-	 * 
-	 * assertArrayEquals(sorted, cocktailSort.AscendingFromEnd(unsorted));
-	 * 
-	 * }
-	 */
+	@Test
+	public void CheckSortFromEnd() {
+
+		int[] unsorted = { -2, 7, -6, 5, 0 };
+		int[] sorted = { 7, 5, 0, -2, -6 };
+
+		assertArrayEquals(sorted, cocktailSort.DescendingFromEnd(unsorted));
+
+	}
+
 }
