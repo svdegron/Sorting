@@ -8,8 +8,7 @@ public class SortingManager {
 
 		// Classes for save data and use sort methods and supporting methods
 		// example: printing array elements
-		Sorter sorterBubble = new BubbleSort();
-		Sorter sorterCocktail = new CocktailSort();
+		Sorter sorter = new BubbleSort();
 
 		int[] unsortedForBegin = { 5, -3, 2, 6, 9, -8, 4, 1, -9, 8, 3, 7 };
 		// this is for beauty, may be easiest for read / understand
@@ -25,25 +24,25 @@ public class SortingManager {
 		boolean isEquals = Arrays.equals(unsortedForBegin, unsortedForEnd);
 
 		if (isEquals) {
-			System.out.println("for sort from begin and from end: " + sorterBubble.PrintArray(unsortedForBegin));
+			System.out.println("for sort from begin and from end: " + sorter.PrintArray(unsortedForBegin));
 		} else {
 
-			System.out.println("for sort from begin: " + sorterBubble.PrintArray(unsortedForBegin));
-			System.out.println("for sort from end  : " + sorterBubble.PrintArray(unsortedForEnd));
+			System.out.println("for sort from begin: " + sorter.PrintArray(unsortedForBegin));
+			System.out.println("for sort from end  : " + sorter.PrintArray(unsortedForEnd));
 
 		}
 
-		sortedForBegin = sorterBubble.AscendingFromBegin(unsortedForBegin);
+		sortedForBegin = sorter.AscendingFromBegin(unsortedForBegin);
 
 		// I need see result
 		System.out.println("Sorted array from begin:");
-		System.out.println(sorterBubble.PrintArray(sortedForBegin));
+		System.out.println(sorter.PrintArray(sortedForBegin));
 
-		sortedForEnd = ((BubbleSort) sorterBubble).AscendingFromEnd(unsortedForEnd);
+		sortedForEnd = ((BubbleSort) sorter).AscendingFromEnd(unsortedForEnd);
 
 		// I need see result
 		System.out.println("Sorted array from end:");
-		System.out.println(sorterBubble.PrintArray(sortedForEnd));
+		System.out.println(sorter.PrintArray(sortedForEnd));
 
 		/*
 		 * I'm interesting, which is easier to read? (1) or (2) ? I think, in this case
@@ -51,25 +50,29 @@ public class SortingManager {
 		 * method realization That's why I doubt
 		 */
 		// sortedForBegin = new int[sortedForBegin.length]; // (1)
-		sortedForBegin = sorterBubble.CleanArray(sortedForBegin.length); // (2)
+		sortedForBegin = sorter.CleanArray(sortedForBegin.length); // (2)
 
-		sortedForBegin = ((BubbleSort) sorterBubble).DescendingFromBegin(unsortedForBegin);
+		// small disadvantage - explicit convert
+		sortedForBegin = ((BubbleSort) sorter).DescendingFromBegin(unsortedForBegin);
 
 		System.out.println("Array is sorted from begin by descending:");
-		System.out.println(sorterBubble.PrintArray(sortedForBegin));
+		System.out.println(sorter.PrintArray(sortedForBegin));
 
-		sortedForEnd = sorterBubble.CleanArray(sortedForEnd.length); // (2)
+		sortedForEnd = sorter.CleanArray(sortedForEnd.length); // (2)
 
-		sortedForEnd = sorterBubble.DescendingFromEnd(unsortedForEnd);
+		sortedForEnd = sorter.DescendingFromEnd(unsortedForEnd);
 
 		System.out.println("Array is sorted from end by descending:");
-		System.out.println(sorterBubble.PrintArray(sortedForEnd));
+		System.out.println(sorter.PrintArray(sortedForEnd));
+		
+		// one of the advantages of declaring objects by a head class: SORTER sorter and ever …
+		sorter = new CocktailSort();
 
-		sortedForBegin = sorterCocktail.AscendingFromBegin(unsortedForBegin);
-		System.out.println("Cocktail sort ↑: " + sorterCocktail.PrintArray(sortedForBegin));
+		sortedForBegin = sorter.AscendingFromBegin(unsortedForBegin);
+		System.out.println("Cocktail sort ↑: " + sorter.PrintArray(sortedForBegin));
 
-		sortedForEnd = sorterCocktail.DescendingFromEnd(unsortedForEnd);
-		System.out.println("Cocktail sort ↓: " + sorterCocktail.PrintArray(sortedForEnd));
+		sortedForEnd = sorter.DescendingFromEnd(unsortedForEnd);
+		System.out.println("Cocktail sort ↓: " + sorter.PrintArray(sortedForEnd));
 
 	}
 
