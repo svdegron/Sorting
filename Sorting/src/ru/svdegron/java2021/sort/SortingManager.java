@@ -10,69 +10,74 @@ public class SortingManager {
 		// example: printing array elements
 		Sorter sorter = new BubbleSort();
 
-		int[] unsortedForBegin = { 5, -3, 2, 6, 9, -8, 4, 1, -9, 8, 3, 7 };
+		int[] unsortedForBegin = { 5, 8, 7, 1, 14, 2, 13, 9, 11, 6, 10, 15, 12, 3, 4 };
 		// this is for beauty, may be easiest for read / understand
 		int[] sortedForBegin = new int[unsortedForBegin.length];
 
 		int[] unsortedForEnd = { 5, 2, 6, 9, 4, 1, 8, 3, 7, -5 }; // unsortedForBegin; //
 		int[] sortedForEnd = new int[unsortedForEnd.length];
 
-		// I want to see what values at start
-		System.out.println("Unsorted arrays");
-
-		// so as not to repeat the output to the console
-		boolean isEquals = Arrays.equals(unsortedForBegin, unsortedForEnd);
-
-		if (isEquals) {
-			System.out.println("for sort from begin and from end: " + sorter.PrintArray(unsortedForBegin));
-		} else {
-
-			System.out.println("for sort from begin: " + sorter.PrintArray(unsortedForBegin));
-			System.out.println("for sort from end  : " + sorter.PrintArray(unsortedForEnd));
-
-		}
-
-		sortedForBegin = sorter.AscendingFromBegin(unsortedForBegin);
-
-		// I need see result
-		System.out.println("Sorted array from begin:");
-		System.out.println(sorter.PrintArray(sortedForBegin));
-
-		sortedForEnd = ((BubbleSort) sorter).AscendingFromEnd(unsortedForEnd);
-
-		// I need see result
-		System.out.println("Sorted array from end:");
-		System.out.println(sorter.PrintArray(sortedForEnd));
-
-		/*
-		 * I'm interesting, which is easier to read? (1) or (2) ? I think, in this case
-		 * (1) need know language basics An this case (2) have to hope for «enemy»
-		 * method realization That's why I doubt
-		 */
-		// sortedForBegin = new int[sortedForBegin.length]; // (1)
-		sortedForBegin = sorter.CleanArray(sortedForBegin.length); // (2)
-
-		// small disadvantage - explicit convert
-		sortedForBegin = ((BubbleSort) sorter).DescendingFromBegin(unsortedForBegin);
-
-		System.out.println("Array is sorted from begin by descending:");
-		System.out.println(sorter.PrintArray(sortedForBegin));
-
-		sortedForEnd = sorter.CleanArray(sortedForEnd.length); // (2)
-
-		sortedForEnd = sorter.DescendingFromEnd(unsortedForEnd);
-
-		System.out.println("Array is sorted from end by descending:");
-		System.out.println(sorter.PrintArray(sortedForEnd));
+//		// I want to see what values at start
+//		System.out.println("Unsorted arrays");
+//
+//		// so as not to repeat the output to the console
+//		boolean isEquals = Arrays.equals(unsortedForBegin, unsortedForEnd);
+//
+//		if (isEquals) {
+//			System.out.println("for sort from begin and from end: " + sorter.PrintArray(unsortedForBegin));
+//		} else {
+//
+//			System.out.println("for sort from begin: " + sorter.PrintArray(unsortedForBegin));
+//			System.out.println("for sort from end  : " + sorter.PrintArray(unsortedForEnd));
+//
+//		}
+//
+//		sortedForBegin = sorter.AscendingFromBegin(unsortedForBegin);
+//
+//		// I need see result
+//		System.out.println("Sorted array from begin:");
+//		System.out.println(sorter.PrintArray(sortedForBegin));
+//
+//		sortedForEnd = ((BubbleSort) sorter).AscendingFromEnd(unsortedForEnd);
+//
+//		// I need see result
+//		System.out.println("Sorted array from end:");
+//		System.out.println(sorter.PrintArray(sortedForEnd));
+//
+//		/*
+//		 * I'm interesting, which is easier to read? (1) or (2) ? I think, in this case
+//		 * (1) need know language basics An this case (2) have to hope for «enemy»
+//		 * method realization That's why I doubt
+//		 */
+//		// sortedForBegin = new int[sortedForBegin.length]; // (1)
+//		sortedForBegin = sorter.CleanArray(sortedForBegin.length); // (2)
+//
+//		// small disadvantage - explicit convert
+//		sortedForBegin = ((BubbleSort) sorter).DescendingFromBegin(unsortedForBegin);
+//
+//		System.out.println("Array is sorted from begin by descending:");
+//		System.out.println(sorter.PrintArray(sortedForBegin));
+//
+//		sortedForEnd = sorter.CleanArray(sortedForEnd.length); // (2)
+//
+//		sortedForEnd = sorter.DescendingFromEnd(unsortedForEnd);
+//
+//		System.out.println("Array is sorted from end by descending:");
+//		System.out.println(sorter.PrintArray(sortedForEnd));
+//		
+//		// one of the advantages of declaring objects by a head class: SORTER sorter and ever …
+//		sorter = new CocktailSort();
+//
+//		sortedForBegin = sorter.AscendingFromBegin(unsortedForBegin);
+//		System.out.println("Cocktail sort ↑: " + sorter.PrintArray(sortedForBegin));
+//
+//		sortedForEnd = sorter.DescendingFromEnd(unsortedForEnd);
+//		System.out.println("Cocktail sort ↓: " + sorter.PrintArray(sortedForEnd));
 		
-		// one of the advantages of declaring objects by a head class: SORTER sorter and ever …
-		sorter = new CocktailSort();
-
+		sorter = new CombSort();
+		
 		sortedForBegin = sorter.AscendingFromBegin(unsortedForBegin);
-		System.out.println("Cocktail sort ↑: " + sorter.PrintArray(sortedForBegin));
-
-		sortedForEnd = sorter.DescendingFromEnd(unsortedForEnd);
-		System.out.println("Cocktail sort ↓: " + sorter.PrintArray(sortedForEnd));
+		System.out.println("Сортировка расчёской | Comb sort ↑: " + sorter.PrintArray(sortedForBegin));
 
 	}
 
