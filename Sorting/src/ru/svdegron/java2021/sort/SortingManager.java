@@ -1,7 +1,5 @@
 package ru.svdegron.java2021.sort;
 
-import java.util.Arrays;
-
 public class SortingManager {
 
 	public static void main(String[] args) {
@@ -78,6 +76,11 @@ public class SortingManager {
 		
 		sortedForBegin = sorter.AscendingFromBegin(unsortedForBegin);
 		System.out.println("Сортировка расчёской | Comb sort ↑: " + sorter.PrintArray(sortedForBegin));
+		
+//		sortedForBegin = new int[unsortedForBegin.length];
+//		
+//		sortedForBegin = ((CombSort) sorter).SortingFromInternet(unsortedForBegin);
+//		System.out.println("Comb sort wiki: " + sorter.PrintArray(sortedForBegin));
 
 	}
 
