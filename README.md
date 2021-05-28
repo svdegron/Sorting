@@ -29,3 +29,11 @@ That there was no too many everything, I decided write two options:
 Combined options, I get two most different methods, if it posible.
 
 Thats all folks! «Looney Tunes»
+
+= = =
+Add comment to class «CocktailSort» or use in other algorithm
+// second example use bitwise operation XOR
+// A = A ^ B = 0101 ^ 1001 = 1100
+// B = A ^ B = 1100 ^ 1001 = 0101
+// A = A ^ B = 1100 ^ 0101 = 1001
+// https://habr.com/ru/post/332088/
